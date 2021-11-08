@@ -22,8 +22,8 @@ sudo systemsetup -setremotelogin on
 #git config --global user.name ""
 #git config --global user.email
 
-#echo "Install OhMyZsh"
-#curl -L http://install.ohmyz.sh | sh
+echo "Install OhMyZsh"
+curl -L http://install.ohmyz.sh | sh
 
 # echo "Setting up zsh plugins..."
 # cd ~/.oh-my-zsh/customs/plugins
