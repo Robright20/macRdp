@@ -19,7 +19,7 @@ sudo createhomedir -c -u alone > /dev/null
 sudo systemsetup -setremotelogin on
 
 #Use zsh as default shell
-sudo chsh -s /bin/zsh
+#sudo chsh -s /bin/zsh
 
 #install zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
