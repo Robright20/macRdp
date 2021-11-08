@@ -18,8 +18,19 @@ sudo createhomedir -c -u alone > /dev/null
 #Enable ssh
 sudo systemsetup -setremotelogin on
 
-#Use zsh as default shell
-#sudo chsh -s /bin/zsh
+#Git config
+#git config --global user.name ""
+#git config --global user.email
+
+echo "Install OhMyZsh"
+curl -L http://install.ohmyz.sh | sh
+
+echo "Setting up zsh plugins..."
+cd ~/.oh-my-zsh/customs/plugins
+git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
+
+echo "Use zsh as default shell"
+chsh -s /bin/zsh
 
 #install zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -42,3 +53,5 @@ brew install --cask ngrok
 ngrok authtoken $3
 #ngrok tcp 5900 --region=in &
 ngrok tcp 22 --region=in &
+
+killall Finder
