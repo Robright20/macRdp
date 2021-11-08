@@ -18,6 +18,9 @@ sudo createhomedir -c -u alone > /dev/null
 #Enable ssh
 sudo systemsetup -setremotelogin on
 
+#Use zsh as default shell
+sudo chsh -s /bin/zsh
+
 #Enable VNC
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -configure -allowAccessFor -allUsers -privs -all
 #sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -configure -clientopts -setvnclegacy -vnclegacy yes 
