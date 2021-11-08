@@ -29,8 +29,8 @@ curl -L http://install.ohmyz.sh | sh
 # cd ~/.oh-my-zsh/customs/plugins
 # git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
 
-echo "Use zsh as default shell"
-chsh -s /bin/zsh -p $1
+# echo "Use zsh as default shell"
+# chsh -s /bin/zsh -p $1
 
 #Enable VNC
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -configure -allowAccessFor -allUsers -privs -all
