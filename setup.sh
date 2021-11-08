@@ -15,6 +15,9 @@ sudo dscl . -passwd /Users/alone $1
 sudo dscl . -passwd /Users/alone $1
 sudo createhomedir -c -u alone > /dev/null
 
+#Enable ssh
+sudo systemsetup -setremotelogin on
+
 #Enable VNC
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -configure -allowAccessFor -allUsers -privs -all
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -configure -clientopts -setvnclegacy -vnclegacy yes 
@@ -31,4 +34,4 @@ brew install --cask ngrok
 
 #configure ngrok and start it
 ngrok authtoken $3
-ngrok tcp 5900 --region=in &
+ngrok tcp 22, 5900 --region=in &
