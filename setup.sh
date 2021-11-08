@@ -25,15 +25,12 @@ sudo systemsetup -setremotelogin on
 echo "Install OhMyZsh"
 curl -L http://install.ohmyz.sh | sh
 
-echo "Setting up zsh plugins..."
-cd ~/.oh-my-zsh/customs/plugins
-git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
+# echo "Setting up zsh plugins..."
+# cd ~/.oh-my-zsh/customs/plugins
+# git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
 
 echo "Use zsh as default shell"
 chsh -s /bin/zsh
-
-#install zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 #Enable VNC
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -configure -allowAccessFor -allUsers -privs -all
