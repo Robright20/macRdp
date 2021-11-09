@@ -2,7 +2,7 @@
 
 echo "Install OhMyZsh"
 sudo su - alone
-source $(curl -L http://install.ohmyz.sh)
+sh $(curl -L http://install.ohmyz.sh)
 
 echo "Setting up Zsh plugins..."
 DEST=/Users/alone/.oh-my-zsh/custom/plugins/
