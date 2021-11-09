@@ -38,7 +38,7 @@ sudo createhomedir -c -u alone > /dev/null
 #sudo chmod +x ./install_zsh.exp
 #sudo chmod +x ./install_zsh
 
-sudo ./install_zsh.exp
+#sudo ./install_zsh.exp
 #Enable RM access for everyone
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -configure -allowAccessFor -allUsers -privs -all
 
