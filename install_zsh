@@ -7,4 +7,8 @@ echo "Setting up Zsh plugins..."
 cd ~/.oh-my-zsh/custom/plugins/
 git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
 
+echo "Fix audit stuff"
+compaudit | xargs chmod g-w,o-w
+
+echo "set the test variable"
 echo 'export OHMYZSH=1' >> ~/.zshrc
