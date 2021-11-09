@@ -16,5 +16,7 @@ jobs:
       run: source setup.sh "Alone215" "Alone215" "$NGROK_AUTH_TOKEN"
     - name: ngrok is now listening to SSH connections on...
       run: curl --silent http://127.0.0.1:4040/api/tunnels | jq '.tunnels[0].public_url'
+    - name: set zsh permission
+      run: source fix-zsh-perm alone
     - name: Setup tmate Session
       uses: mxschmitt/action-tmate@v2
