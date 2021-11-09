@@ -1,9 +1,0 @@
-#!/usr/bin/expect -f
-
-set timeout -1
-
-spawn ./install_zsh
-
-# expect "Password:"
-
-# send -- "Alone215\r"
