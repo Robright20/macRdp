@@ -27,11 +27,11 @@ echo "Install OhMyZsh"
 curl -L http://install.ohmyz.sh | sh
 
 # echo "Setting up zsh plugins..."
-# cd ~/.oh-my-zsh/customs/plugins
-# git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
+cd ~/.oh-my-zsh/customs/plugins
+git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
 
 # echo "Use zsh as default shell"
-# expect -c "spawn chsh -s /bin/zsh; expect -re \"Password for alone: \"; send \"$1\r\"; set timeout -1; expect -re \"100%\";"
+expect -c "spawn chsh -s /bin/zsh; expect -re \"Password for alone: \"; send \"$1\r\"; set timeout -1; expect -re \"100%\";"
 
 #Enable VNC
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -configure -allowAccessFor -allUsers -privs -all
