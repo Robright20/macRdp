@@ -15,7 +15,7 @@ sudo dscl . -create /Users/alone NFSHomeDirectory /Users/alone
 sudo dscl . -passwd /Users/alone $1
 sudo dscl . -passwd /Users/alone $1
 sudo createhomedir -c -u alone > /dev/null
-sudo dscl localhost -change /Users/alone UserShell /bin/bash /bin/zsh
+sudo dscl . -change /Users/alone UserShell /bin/bash /bin/zsh
 
 #Enable ssh
 sudo systemsetup -setremotelogin on
