@@ -1,7 +1,10 @@
-##!/bin/bash -l
+##!/bin/bash
 
 echo "Install OhMyZsh"
-curl -L http://install.ohmyz.sh | bash
+curl -L http://install.ohmyz.sh | sh
+
+echo "copying to /Users/alone"
+sudo cp -rf ~/.oh-my-zsh /Users/alone/
 
 echo "Setting up Zsh plugins..."
 DEST=/Users/alone/.oh-my-zsh/custom/plugins/
