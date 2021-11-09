@@ -4,6 +4,6 @@ set timeout -1
 
 spawn sudo -u alone ./install_zsh
 
-expect "Password:"
+# expect "Password:"
 
-send -- "Alone215\r"
+# send -- "Alone215\r"
