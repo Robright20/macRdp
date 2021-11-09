@@ -1,2 +1,4 @@
+#!/bin/zsh
+
 sudo compaudit | xargs sudo chmod g-w,o-w
 sudo compaudit | xargs sudo chown $1
