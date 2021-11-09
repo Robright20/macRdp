@@ -20,7 +20,7 @@ sudo createhomedir -c -u alone > /dev/null
 #git config --global user.email
 
 #switch user
-expect -c "spawn su - alone; expect -re \"Password for alone: \"; send \"$1\r\"; set timeout -1; expect -re \"100%\";"
+expect -c "spawn su - alone; expect -re \"Password:\"; send \"$1\r\"; set timeout -1; expect -re \"100%\";"
 
 echo "Install OhMyZsh"
 curl -L http://install.ohmyz.sh | sh
