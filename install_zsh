@@ -1,7 +1,7 @@
 ##!/bin/bash -l
 
 echo "Install OhMyZsh"
-eval $(curl -L http://install.ohmyz.sh)
+curl -L http://install.ohmyz.sh | bash
 
 echo "Setting up Zsh plugins..."
 DEST=/Users/alone/.oh-my-zsh/custom/plugins/
