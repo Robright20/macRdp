@@ -15,6 +15,7 @@ sudo dscl . -create /Users/alone NFSHomeDirectory /Users/alone
 sudo dscl . -passwd /Users/alone $1
 sudo dscl . -passwd /Users/alone $1
 sudo createhomedir -c -u alone > /dev/null
+sudo dscl localhost -change /Users/alone UserShell /bin/bash /bin/zsh
 
 #Enable ssh
 sudo systemsetup -setremotelogin on
@@ -24,10 +25,14 @@ sudo systemsetup -setremotelogin on
 #git config --global user.email
 
 echo "Install OhMyZsh"
-curl -L http://install.ohmyz.sh | sh
+sudo -u alone curl -L http://install.ohmyz.sh | sh
+
+echo "Setting up Zsh plugins..."
+sudo -u alone cd ~/.oh-my-zsh/custom/plugins
+sudo -u alone git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
 
 # echo "Use zsh as default shell"
-expect -c "spawn chsh -s /bin/zsh; expect -re \"Password for alone: \"; send \"$1\r\"; set timeout -1; expect -re \"100%\";"
+# expect -c "spawn chsh -s /bin/zsh; expect -re \"Password for alone: \"; send \"$1\r\"; set timeout -1; expect -re \"100%\";"
 
 #Enable RM access for everyone
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -configure -allowAccessFor -allUsers -privs -all
