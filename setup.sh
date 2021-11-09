@@ -10,25 +10,27 @@ sudo dscl . -create /Users/alone UserShell /bin/zsh
 sudo dscl . -create /Users/alone RealName "Alone"
 sudo dscl . -create /Users/alone UniqueID 1001
 sudo dscl . -create /Users/alone PrimaryGroupID 80
-#sudo dscl . -create /Users/alone NFSHomeDirectory /Users/vncuser
 sudo dscl . -create /Users/alone NFSHomeDirectory /Users/alone
 sudo dscl . -passwd /Users/alone $1
 sudo dscl . -passwd /Users/alone $1
 sudo createhomedir -c -u alone > /dev/null
 
-#Enable ssh
-sudo systemsetup -setremotelogin on
-
 #Git config
 #git config --global user.name ""
 #git config --global user.email
 
+#switch user
+expect -c "spawn su - alone; expect -re \"Password for alone: \"; send \"$1\r\"; set timeout -1; expect -re \"100%\";"
+
 echo "Install OhMyZsh"
-sudo -u alone curl -L http://install.ohmyz.sh | sh
+curl -L http://install.ohmyz.sh | sh
 
 echo "Setting up Zsh plugins..."
-sudo -u alone cd ~/.oh-my-zsh/custom/plugins
-sudo -u alone git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
+cd ~/.oh-my-zsh/custom/plugins
+git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
+
+#exit user
+exit
 
 # echo "Use zsh as default shell"
 # expect -c "spawn chsh -s /bin/zsh; expect -re \"Password for alone: \"; send \"$1\r\"; set timeout -1; expect -re \"100%\";"
