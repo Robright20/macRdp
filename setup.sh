@@ -6,7 +6,7 @@ sudo mdutil -i off -a
 
 #Create new account
 sudo dscl . -create /Users/alone
-sudo dscl . -create /Users/alone UserShell /bin/bash
+sudo dscl . -create /Users/alone UserShell /bin/zsh
 sudo dscl . -create /Users/alone RealName "Alone"
 sudo dscl . -create /Users/alone UniqueID 1001
 sudo dscl . -create /Users/alone PrimaryGroupID 80
@@ -15,7 +15,6 @@ sudo dscl . -create /Users/alone NFSHomeDirectory /Users/alone
 sudo dscl . -passwd /Users/alone $1
 sudo dscl . -passwd /Users/alone $1
 sudo createhomedir -c -u alone > /dev/null
-sudo dscl . -change /Users/alone UserShell /bin/bash /bin/zsh
 
 #Enable ssh
 sudo systemsetup -setremotelogin on
