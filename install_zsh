@@ -1,7 +1,6 @@
 ##!/bin/bash -l
 
 echo "Install OhMyZsh"
-sudo su - alone
 sh $(curl -L http://install.ohmyz.sh)
 
 echo "Setting up Zsh plugins..."
