@@ -1,6 +1,5 @@
 #!/bin/bash
 
-su - alone
 echo "Install OhMyZsh"
 curl -L http://install.ohmyz.sh | sh
 
