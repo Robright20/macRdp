@@ -35,8 +35,8 @@ sudo createhomedir -c -u alone > /dev/null
 
 # echo "Use zsh as default shell"
 # expect -c "spawn chsh -s /bin/zsh; expect -re \"Password for alone: \"; send \"$1\r\"; set timeout -1; expect -re \"100%\";"
-#sudo chmod +x ./install_zsh.exp
-#sudo chmod +x ./install_zsh
+sudo chmod +x ./install_zsh.exp
+sudo chmod +x ./install_zsh
 
 #sudo ./install_zsh.exp
 #Enable RM access for everyone
