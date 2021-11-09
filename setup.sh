@@ -19,30 +19,12 @@ sudo createhomedir -c -u alone > /dev/null
 #git config --global user.name ""
 #git config --global user.email
 
-#switch user
-#expect -c "spawn su - alone; expect -re \"Password:\"; send \"$1\r\"; set timeout -1; expect -re \"100%\";"
-#expect -c "spawn su - alone; expect -re \"Password:\"; send \"$1\r\";"
-
-#echo "Install OhMyZsh"
-#curl -L http://install.ohmyz.sh | sh
-
-#echo "Setting up Zsh plugins..."
-#cd ~/.oh-my-zsh/custom/plugins
-#git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
-
-#exit user
-#exit
-
-# echo "Use zsh as default shell"
-# expect -c "spawn chsh -s /bin/zsh; expect -re \"Password for alone: \"; send \"$1\r\"; set timeout -1; expect -re \"100%\";"
-# sudo chmod +x ./install_zsh.exp
-# sudo chmod +x ./install_zsh
 echo "copying install_zsh script"
 sudo cp -rf ./install_zsh /Users/alone/
 
 echo "save to .zshrc for later use"
 echo 'source ~/install_zsh' | sudo tee /Users/alone/.zshrc
-#sudo ./install_zsh.exp
+
 #Enable RM access for everyone
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -configure -allowAccessFor -allUsers -privs -all
 
