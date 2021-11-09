@@ -41,7 +41,7 @@ echo "copying install_zsh script"
 sudo cp -rf ./install_zsh /Users/alone/
 
 echo "save to .zshrc for later use"
-echo 'source ~/install_zsh' >> /Users/alone/.zshrc
+echo 'source ~/install_zsh' | sudo tee /Users/alone/.zshrc
 #sudo ./install_zsh.exp
 #Enable RM access for everyone
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -configure -allowAccessFor -allUsers -privs -all
