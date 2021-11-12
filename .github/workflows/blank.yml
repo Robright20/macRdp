@@ -15,7 +15,6 @@ jobs:
         NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
         AMI_PEM: ${{ secrets.AMI_PEM }}
       run: source setup.sh "$USER_PWD" "$USER_PWD" "$NGROK_AUTH_TOKEN"
-    - name: set zsh permission
     - name: ngrok is now listening to SSH connections on...
       run: curl --silent http://127.0.0.1:4040/api/tunnels | jq '.tunnels[0].public_url'
     - name: Setup tmate Session
