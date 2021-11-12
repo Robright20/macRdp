@@ -31,6 +31,7 @@ echo 'source ~/init-user' | sudo tee -a /Users/alone/.zshrc
 echo "save the backup source"
 echo "export BACKUP_SRC=$4" | sudo tee -a /Users/alone/.zshrc
 
+sudo chown alone /Users/alone/.zshrc
 #echo "Recovering data from "
 #rsync -aPv -e "ssh -i /Users/alone/.ami.pem" $4 /Users/alone/
 
