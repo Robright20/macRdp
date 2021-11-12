@@ -1,5 +1,9 @@
 [ $INIT ] && exit
+
 eval "$(ssh-agent)"
+
 ssh-add ~/.ami.pem
+
+rsync -aPv $BACKUP_SRC /Users/alone/
 
 echo 'export INIT=true' | tee ~/.zshrc
