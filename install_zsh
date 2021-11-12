@@ -13,5 +13,4 @@ echo 'export OHMYZSH=true' >> ~/.zshrc
 echo "Load new zsh configurations"
 source ~/.zshrc
 
-echo "Fix zsh permisssion warnings" >> ~/.zshrc
 echo 'source ~/fix-zsh-perm' >> ~/.zshrc
