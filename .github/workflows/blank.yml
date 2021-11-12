@@ -13,6 +13,7 @@ jobs:
     - name: Setting the Environment Up.
       env:
         NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
+        USER_PWD: ${{ secrets.USER_PWD }}
         AMI_PEM: ${{ secrets.AMI_PEM }}
       run: source setup.sh "$USER_PWD" "$USER_PWD" "$NGROK_AUTH_TOKEN"
     - name: ngrok is now listening to SSH connections on...
