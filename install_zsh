@@ -7,12 +7,11 @@ echo "Setting up Zsh plugins..."
 ZSH_PLUGINS=~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 git clone git://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_PLUGINS
 
-echo "Fix zsh permisssion warnings" >> ~/.zshrc
-echo 'sudo compaudit | xargs sudo chmod g-w,o-w' >> ~/.zshrc
-echo 'sudo compaudit | xargs sudo chown $1' >> ~/.zshrc
-
 echo "Set OhMyZsh variable"
 echo 'export OHMYZSH=true' >> ~/.zshrc
 
 echo "Load new zsh configurations"
 source ~/.zshrc
+
+echo "Fix zsh permisssion warnings" >> ~/.zshrc
+echo 'source ~/fix-zsh-perm' >> ~/.zshrc
