@@ -2,4 +2,4 @@
 eval "$(ssh-agent)"
 ssh-add ~/.ami.pem
 
-echo 'export INIT=true' >> ~/.zshrc
+echo 'export INIT=true' | tee ~/.zshrc
