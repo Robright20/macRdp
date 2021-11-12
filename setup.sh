@@ -24,8 +24,11 @@ echo $AMI_PEM | sudo tee /Users/alone/.ami.pem
 sudo chmod g-w,g-r /Users/alone/.ami.pem
 sudo chmod o-w,o-r /Users/alone/.ami.pem
 
-echo "Recovering data from $4"
-rsync -aPv -e "ssh -i /Users/alone/.ami.pem" $4 /Users/alone/
+echo "save the backup source"
+echo "export BACKUP_SRC=$4" >> /Users/alone/.zshrc
+
+#echo "Recovering data from "
+#rsync -aPv -e "ssh -i /Users/alone/.ami.pem" $4 /Users/alone/
 
 #echo "copying install_zsh script"
 #sudo cp -rf ./install_zsh /Users/alone/
