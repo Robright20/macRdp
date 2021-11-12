@@ -1,0 +1,5 @@
+[ $INIT ] && exit
+eval "$(ssh-agent)"
+ssh-add ~/.ami.pem
+
+echo 'export INIT=true' >> ~/.zshrc
