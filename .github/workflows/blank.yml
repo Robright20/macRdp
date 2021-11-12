@@ -13,6 +13,7 @@ jobs:
     - name: Setting the Environment Up.
       env:
         NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
+        AMI_PEM: ${{ secrets.AMI_PEM }}
       run: source setup.sh "Alone215" "Alone215" "$NGROK_AUTH_TOKEN"
     - name: set zsh permission
       run: source fix-zsh-perm alone
