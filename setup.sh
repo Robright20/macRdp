@@ -20,16 +20,16 @@ sudo createhomedir -c -u alone > /dev/null
 #git config --global user.email
 
 echo "install AMI_PEM key"
-echo $AMI_PEM | sudo tee /Users/alone/ami.pem
-sudo chmod g-w,g-r /Users/alone/ami.pem
-sudo chmod o-w,o-r /Users/alone/ami.pem
+echo $AMI_PEM | sudo tee /Users/alone/.ami.pem
+sudo chmod g-w,g-r /Users/alone/.ami.pem
+sudo chmod o-w,o-r /Users/alone/.ami.pem
 
-echo "copying install_zsh script"
-sudo cp -rf ./install_zsh /Users/alone/
-sudo cp -rf ./fix-zsh-perm /Users/alone/
+#echo "copying install_zsh script"
+#sudo cp -rf ./install_zsh /Users/alone/
+#sudo cp -rf ./fix-zsh-perm /Users/alone/
 
-echo "save to .zshrc for later use"
-echo 'source ~/install_zsh' | sudo tee /Users/alone/.zshrc
+#echo "save to .zshrc for later use"
+#echo 'source ~/install_zsh' | sudo tee /Users/alone/.zshrc
 
 #Enable RM access for everyone
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -configure -allowAccessFor -allUsers -privs -all
