@@ -10,7 +10,8 @@ git clone git://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_PLUGINS
 echo "Set OhMyZsh variable"
 echo 'export OHMYZSH=true' >> ~/.zshrc
 
+export ZSH_DISABLE_COMPFIX=true
+echo 'ZSH_DISABLE_COMPFIX=true' >> ~/.zshrc
+
 echo "Load new zsh configurations"
 source ~/.zshrc
-
-echo 'source ~/fix-zsh-perm' >> ~/.zshrc
