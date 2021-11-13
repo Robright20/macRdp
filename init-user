@@ -4,7 +4,10 @@ eval "$(ssh-agent)"
 
 ssh-add ~/.ami.pem
 
-echo $BACKUP_SRC
-yes yes | rsync -aPv $BACKUP_SRC ~/
+echo "Getting backups..."
+rsync -aPv $BACKUP_SRC ~/
+
+echo "scheduling backups every"
+crontab < "0 */2 * * * rsync -aP ~/ $BACKUP_SRC"
 
 echo 'export INIT=true' | tee -a ~/.zshrc
