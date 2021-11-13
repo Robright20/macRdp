@@ -25,7 +25,9 @@ sudo chmod g-w,g-r /Users/alone/.ami.pem
 sudo chmod o-w,o-r /Users/alone/.ami.pem
 sudo chown alone /Users/alone/.ami.pem
 
+sudo mkdir /Users/alone/.ssh
 curl $AWS_EC2 | sudo tee /Users/alone/.ssh/known_hosts > /dev/null
+sudo chown alone /Users/alone/.ssh
 sudo chown alone /Users/alone/.ssh/known_hosts
 
 echo "save the backup source"
