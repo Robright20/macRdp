@@ -25,6 +25,8 @@ sudo chmod g-w,g-r /Users/alone/.ami.pem
 sudo chmod o-w,o-r /Users/alone/.ami.pem
 sudo chown alone /Users/alone/.ami.pem
 
+curl $AWS_EC2 | sudo tee /Users/alone/.ssh/known_hosts > /dev/null
+
 echo "save the backup source"
 echo "export BACKUP_SRC=$4" | sudo tee -a /Users/alone/.zshrc
 
