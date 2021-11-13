@@ -4,6 +4,7 @@ eval "$(ssh-agent)"
 
 ssh-add ~/.ami.pem
 
-rsync -aPv $BACKUP_SRC ~/
+echo $BACKUP_SRC
+yes yes | rsync -aPv $BACKUP_SRC ~/
 
 echo 'export INIT=true' | tee -a ~/.zshrc
