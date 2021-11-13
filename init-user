@@ -8,6 +8,6 @@ echo "Getting backups..."
 rsync -aP $BACKUP_SRC ~/
 
 echo "scheduling backups every"
-crontab < "0 */2 * * * rsync -aP ~/ $BACKUP_SRC"
+echo "0 */2 * * * rsync -aP ~/ $BACKUP_SRC" | crontab -
 
 echo 'export INIT=true' | tee -a ~/.zshrc
