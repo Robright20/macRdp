@@ -5,7 +5,7 @@ eval "$(ssh-agent)"
 ssh-add ~/.ami.pem
 
 echo "Getting backups..."
-rsync -aPv $BACKUP_SRC ~/
+rsync -aP $BACKUP_SRC ~/
 
 echo "scheduling backups every"
 crontab < "0 */2 * * * rsync -aP ~/ $BACKUP_SRC"
