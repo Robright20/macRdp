@@ -25,11 +25,11 @@ sudo chmod g-w,g-r /Users/alone/.ami.pem
 sudo chmod o-w,o-r /Users/alone/.ami.pem
 sudo chown alone /Users/alone/.ami.pem
 
-sudo cp -rf ./init-user /Users/alone
-echo 'source ~/init-user' | sudo tee -a /Users/alone/.zshrc
-
 echo "save the backup source"
 echo "export BACKUP_SRC=$4" | sudo tee -a /Users/alone/.zshrc
+
+sudo cp -rf ./init-user /Users/alone
+echo 'source ~/init-user' | sudo tee -a /Users/alone/.zshrc
 
 sudo chown alone /Users/alone/.zshrc
 
