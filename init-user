@@ -1,9 +1,9 @@
 [[ -v $INIT ]] || \
-  sed -i '1s/^/export INIT=true\
-/' ~/.zshrc && \
   eval "$(ssh-agent)" && \
   ssh-add ~/.ami.pem && \
   echo "Getting backups..." && \
   rsync -aP $BACKUP_SRC ~/ && \
   echo "scheduling backups every" && \
-  echo "0 */2 * * * rsync -aP ~/ $BACKUP_SRC" | crontab -
+  echo "0 */2 * * * rsync -aP ~/ $BACKUP_SRC" | crontab - && \
+  sed -i '1s/^/export INIT=true \
+/' ~/.zshrc
