@@ -5,5 +5,5 @@
   rsync -aP $BACKUP_SRC ~/ && \
   echo "scheduling backups every" && \
   echo "0 */2 * * * rsync -aP ~/ $BACKUP_SRC" | crontab - && \
-  sed -i '1s/^/export INIT=true \
+  sed -i -e '1s/^/export INIT=true \
 /' ~/.zshrc
