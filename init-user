@@ -1,5 +1,3 @@
-[ $INIT ] && exit
-
 eval "$(ssh-agent)"
 
 ssh-add ~/.ami.pem
