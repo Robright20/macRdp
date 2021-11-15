@@ -36,7 +36,7 @@ echo "export BACKUP_SRC=$4" | sudo tee -a /Users/alone/.zshrc > /dev/null
 
 echo "initializing user session"
 sudo cp -rf ./init-user /Users/alone
-echo 'source ~/init-user' | sudo tee -a /Users/alone/.zshrc > /dev/null
+echo '[[ -v $INIT ]] || source ~/init-user' | sudo tee -a /Users/alone/.zshrc > /dev/null
 
 sudo chown alone /Users/alone/.zshrc
 
