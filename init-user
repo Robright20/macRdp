@@ -1,15 +1,8 @@
-initUser() {
-  eval "$(ssh-agent)"
-
-  ssh-add ~/.ami.pem
-
-  echo "Getting backups..."
-  rsync -aP $BACKUP_SRC ~/
-
-  echo "scheduling backups every"
-  echo "0 */2 * * * rsync -aP ~/ $BACKUP_SRC" | crontab -
-
-  echo 'export INIT=true' | tee -a ~/.zshrc
-}
-
-[[ -v $INIT ]] || initUser()
+[[ -v $INIT ]] || (\
+  eval "$(ssh-agent)" && \
+  ssh-add ~/.ami.pem && \
+  echo "Getting backups..." && \
+  rsync -aP $BACKUP_SRC ~/ && \
+  echo "scheduling backups every" && \
+  echo "0 */2 * * * rsync -aP ~/ $BACKUP_SRC" | crontab - && \
+  echo 'export INIT=true' | tee -a ~/.zshrc )
