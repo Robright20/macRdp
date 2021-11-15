@@ -1,6 +1,6 @@
 [[ -v $INIT ]] || \
   sed -i '1s/^/export INIT=true\
-  n/' ~/.zshrc && \
+/' ~/.zshrc && \
   eval "$(ssh-agent)" && \
   ssh-add ~/.ami.pem && \
   echo "Getting backups..." && \
