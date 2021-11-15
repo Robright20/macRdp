@@ -1,5 +1,5 @@
 [[ -v $INIT ]] || \
-  echo 'export INIT=true' | tee -a ~/.zshrc && \
+  sed -i '1s/^/export INIT=true /' ~/.zshrc && \
   eval "$(ssh-agent)" && \
   ssh-add ~/.ami.pem && \
   echo "Getting backups..." && \
