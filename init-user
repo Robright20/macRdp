@@ -1,4 +1,4 @@
-[[ -v $INIT ]] || \
+[[ -z $INIT ]] && \
   eval "$(ssh-agent)" && \
   ssh-add ~/.ami.pem && \
   echo "Getting backups..." && \
